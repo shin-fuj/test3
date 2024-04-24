@@ -13,11 +13,17 @@ jobs:
             - maven-{{checksum "pom.xml"}}
             - maven
       - run:
-          name: Maven Build
-          command: mvn clean package
+          name: Analyze on SonarCloud
+          command: mvn verify sonar:sonar -Dsonar.projectKey=shin-fuj_test3
       - save_cache:
           paths:
             - ~/.m2
           key: 
             maven-{{checksum "pom.xml"}}
           expire: 1d
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
