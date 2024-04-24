@@ -13,6 +13,6 @@ public class NumberUtilTest {
     @Test
     void testNullToZeroInteger() {
         Integer intValue = null;
-        assertEquals(1, NumberUtil.nullToZero(intValue));
+        assertEquals(0, NumberUtil.nullToZero(intValue));
     }
 }
