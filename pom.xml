@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>21</java.version>
 		<sonar.projectKey>shin-fuj_test3</sonar.projectKey>
-		<sonar.organization>shin-fuj</sonar.organization>
+		<sonar.organization>shin-fuj-1</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 		<sonar.java.spotbugs.reportPaths>${project.basedir}/target/spotbugsXml.xml</sonar.java.spotbugs.reportPaths>
