@@ -15,8 +15,4 @@ public class NumberUtil {
         }
         return value;
     }
-
-    public static String valueOf(int value) {
-        return Integer.valueOf(value).toString();
-    }
 }

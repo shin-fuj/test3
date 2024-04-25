@@ -8,8 +8,7 @@ class Test3ApplicationTests {
 
 	@Test
 	void contextLoads() {
-
-		System.out.println("Test3 Start!");
+		Test3Application.main(new String[]{""});
 	}
 
 }
