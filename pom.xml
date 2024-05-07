@@ -16,7 +16,6 @@
 	<properties>
 		<java.version>21</java.version>
 		<sonar.projectKey>shin-fuj_test3</sonar.projectKey>
-		<sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
 		<sonar.organization>shin-fuj-1</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
@@ -86,12 +85,12 @@
                     </execution>
                 </executions>
             </plugin>
+<!--
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>3.3.1</version>
 				<configuration>
-					<!-- Style違反時にBUILD FAILUREとしてしまうと後続のチェックが行われないため、failにしない -->
 					<failOnViolation>false</failOnViolation>
 				</configuration>
                 <executions>
@@ -110,7 +109,6 @@
 				<version>4.8.4.0</version>
 				<configuration>
 					<xmlOutput>true</xmlOutput>
-					<!-- バグ検出時にBUILD FAILUREとしてしまうと後続のチェックが行われないため、failにしない -->
 					<failOnError>false</failOnError>
 				</configuration>
                 <executions>
@@ -123,6 +121,32 @@
                     </execution>
 				</executions>
 			</plugin>
+-->
 		</plugins>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>4.8.4.0</version>
+				<configuration>
+					<xmlOutput>true</xmlOutput>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.3.1</version>
+				<reportSets>
+					<reportSet>
+					<reports>
+						<report>checkstyle</report>
+					</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>

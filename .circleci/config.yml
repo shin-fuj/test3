@@ -13,8 +13,11 @@ jobs:
             - maven-{{checksum "pom.xml"}}
             - maven
       - run:
-          name: Analyze on SonarCloud
-          command: mvn -X verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+          name: Maven Build and Analyze on SonarCloud
+          command: mvn clean package site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+#      - run:
+#          name: Analyze on SonarCloud
+#          command: mvn -X verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       - save_cache:
           paths:
             - ~/.m2
