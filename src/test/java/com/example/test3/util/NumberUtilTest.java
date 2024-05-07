@@ -18,4 +18,9 @@ public class NumberUtilTest {
         Integer intValue = null;
         assertEquals(0, NumberUtil.nullToZero(intValue));
     }
+
+    @Test
+    void testValueOfInt() {
+        assertEquals("1", NumberUtil.valueOf(1));
+    }
 }

@@ -2,6 +2,10 @@ package com.example.test3.util;
 
 public class NumberUtil {
 
+    private NumberUtil() {
+        // NOP.
+    }
+
     public static Long nullToZero(Long value) {
         if (value == null) {
             return 0L;
